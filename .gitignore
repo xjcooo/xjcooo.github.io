@@ -1,2 +1,4 @@
 public/*
 theme/next/*
+node_modules/*
+.deploy*
