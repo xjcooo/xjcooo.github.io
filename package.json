@@ -6,7 +6,9 @@
     "version": "3.8.0"
   },
   "dependencies": {
+    "acorn": "^6.1.1",
     "acorn-dynamic-import": "^4.0.0",
+    "eslint": "^5.15.3",
     "hexo": "^3.8.0",
     "hexo-admin": "^2.3.0",
     "hexo-deployer-git": "^1.0.0",
