@@ -1,7 +1,10 @@
 ---
 title: 自建博客之hexo+github+Typora
 date: 2019-03-22 22:54:23
-tags: hexo
+categories: blog笔记
+tags: 
+- hexo
+- blog
 Typora-root-url: ../
 ---
 
@@ -9,9 +12,9 @@ Typora-root-url: ../
 
 https://xxxx.github.io
 
-# 1. 软件安装
+# 软件安装
 
-## 1.1 hexo的安装
+## hexo的安装
 
 依赖于node.js和npm，环境搭建好后，使用如下安装命令安装hexo：
 
@@ -25,23 +28,23 @@ npm install -g hexo-cli
 npm install hexo-deployer-git --save
 ```
 
-## 1.2 GitHub依赖安装
+## GitHub依赖安装
 
 不同平台安装方式请自行搜索不做赘述
 
-## 1.3 Typora的安装
+## Typora的安装
 
 [下载地址](https://www.typora.io/)
 
 请根据自己系统下载，开箱即用
 
-# 2. 使用说明
+# 使用说明
 
-## 2.1 hexo
+## hexo
 
 简易使用见本博客的文章《hello-world》
 
-## 2.2 GitHub
+## GitHub
 
 1. 首先登陆GitHub，
 2. 新建一个仓库，项目名称形如xxx.github.io，其中xxx以为任意字母组合
