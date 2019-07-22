@@ -1,8 +1,9 @@
 # blog
 这是一个博客项目的源代码，使用hexo+Typora+github实现
 # url
-https://xjcooo.github.io
-http://blog.bsquartz.com
+- github访问地址: https://xjcooo.github.io
+- 腾讯云访问地址: [xjcooo.coding.me](http://xjcooo.coding.me/)
+- 统一访问地址(通过域名分发): http://blog.bsquartz.com
 
 ## 源码
 
