@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: hexo新建博客站点
 categories: blog笔记
 tags: 
 - hexo
