@@ -1,9 +1,9 @@
 ---
-title: 自建博客之hexo+github+Typora
+title: hexo系列(二)自建博客之hexo+github+Typora
 date: 2019-03-22 22:54:23
-categories: blog笔记
+categories: hexo笔记
 tags: 
-- hexo
+- hexo系列
 - blog
 Typora-root-url: ../
 ---

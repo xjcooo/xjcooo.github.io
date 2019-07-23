@@ -1,8 +1,8 @@
 ---
-title: hexo新建博客站点
-categories: blog笔记
+title: hexo系列(一)新建博客站点
+categories: hexo笔记
 tags: 
-- hexo
+- hexo系列
 - blog
 Typora-root-url: ../
 ---

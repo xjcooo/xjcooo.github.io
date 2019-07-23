@@ -3,7 +3,7 @@
 title: java知识图谱
 Typora-root-url: ../
 date: 2019-07-22 11:27:02
-categories: java
+categories: 知识图谱
 tags:
 - java
 - 知识图谱
