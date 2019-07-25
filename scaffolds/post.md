@@ -1,8 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-categories:
-tags:
+categories: 
+tags: 
 Typora-root-url: ../
+mathjax: true
 ---
 
