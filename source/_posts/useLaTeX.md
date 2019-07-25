@@ -6,6 +6,7 @@ categories: hexo笔记
 tags:
 - hexo系列
 - blog
+mathjax: true
 ---
 
 # 前言
