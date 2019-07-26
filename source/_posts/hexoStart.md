@@ -1,5 +1,6 @@
 ---
 title: hexo系列(一)新建博客站点
+date: 2019-03-22 12:54:23
 categories: hexo笔记
 tags: 
 - hexo系列
@@ -50,12 +51,6 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
-
-## Sites
-
-![5434567](/images/5434567.jpg)
-
-
 
 ## Remark
 
