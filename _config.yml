@@ -83,5 +83,5 @@ deploy:
   type: git
   repo: 
     github: https://github.com/xjcooo/xjcooo.github.io.git,master
-    gitcafe: https://git.dev.tencent.com/xjcooo/xjcooo.git,master
+    gitcafe: https://gitee.com/xjcooo/xjcooo.git,master
 ##  branch: master
