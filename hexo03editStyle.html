@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans,en,default">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/java.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/java_color2.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/java_color.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/java.png?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hexo系列,blog,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文主要讲解hexo博客的部分样式调整方式 博文置顶修改hexo-generator-index插件替换文件：node_modules/hexo-generator-index/lib/generator.js为：generator.js 12345678910111213141516171819202122232425262728&apos;use strict&apos;;var pagination = req">
+<meta name="keywords" content="hexo系列,blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo系列(三)自建博客之样式修改">
+<meta property="og:url" content="http://blog.bsquartz.com/hexo03editStyle.html">
+<meta property="og:site_name" content="xjcooo&#39;s blog">
+<meta property="og:description" content="本文主要讲解hexo博客的部分样式调整方式 博文置顶修改hexo-generator-index插件替换文件：node_modules/hexo-generator-index/lib/generator.js为：generator.js 12345678910111213141516171819202122232425262728&apos;use strict&apos;;var pagination = req">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-08-26T18:53:42.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo系列(三)自建博客之样式修改">
+<meta name="twitter:description" content="本文主要讲解hexo博客的部分样式调整方式 博文置顶修改hexo-generator-index插件替换文件：node_modules/hexo-generator-index/lib/generator.js为：generator.js 12345678910111213141516171819202122232425262728&apos;use strict&apos;;var pagination = req">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.bsquartz.com/hexo03editStyle.html">
+
+
+
+
+
+  <title>hexo系列(三)自建博客之样式修改 | xjcooo's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xjcooo's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">站上巨人肩上,一览天尽头的风景</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.bsquartz.com/hexo03editStyle.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="scott">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xjcooo's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hexo系列(三)自建博客之样式修改</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T14:55:12+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文主要讲解hexo博客的部分样式调整方式</p>
+<h1 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h1><h2 id="修改hexo-generator-index插件"><a href="#修改hexo-generator-index插件" class="headerlink" title="修改hexo-generator-index插件"></a>修改<code>hexo-generator-index</code>插件</h2><p>替换文件：<code>node_modules/hexo-generator-index/lib/generator.js</code>为：<a href="https://github.com/ehlxr/java-utils/blob/master/resources/generator.js" target="_blank" rel="noopener">generator.js</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> pagination = <span class="built_in">require</span>(<span class="string">'hexo-pagination'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = <span class="keyword">this</span>.config;</span><br><span class="line">  <span class="keyword">var</span> posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">            <span class="keyword">if</span>(a.top == b.top) <span class="keyword">return</span> b.date - a.date; <span class="comment">// 若top值一样则按照文章日期降序排</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> b.top - a.top; <span class="comment">// 否则按照top值降序排</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.date - a.date; <span class="comment">// 都没定义按照文章日期降序排</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> paginationDir = config.pagination_dir || <span class="string">'page'</span>;</span><br><span class="line">  <span class="keyword">return</span> pagination(<span class="string">''</span>, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [<span class="string">'index'</span>, <span class="string">'archive'</span>],</span><br><span class="line">    format: paginationDir + <span class="string">'/%d/'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="设置文章置顶"><a href="#设置文章置顶" class="headerlink" title="设置文章置顶"></a>设置文章置顶</h2><p>在文章<code>Front-matter</code>中添加<code>top</code>值，数值越大文章越靠前，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">date: 2019-04-05 12:00:00</span><br><span class="line">type: &quot;test&quot;</span><br><span class="line">top: 10</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h1 id="修改主题色彩"><a href="#修改主题色彩" class="headerlink" title="修改主题色彩"></a>修改主题色彩</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>修改<code>hexo/themes/next/source/css/_variables/base.styl</code>中Colors的代码块，网上找的一个配色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// Colors</span><br><span class="line">// colors for use across theme.</span><br><span class="line">// --------------------------------------------------</span><br><span class="line">  $whitesmoke   = #f5f5f5</span><br><span class="line">  $gainsboro    = #eee  //这个是边栏头像外框的颜色，</span><br><span class="line">  $gray-lighter = #ddd  //文章中插入图片边框颜色</span><br><span class="line">  $grey-light   = #ccc  //文章之间分割线、下划线颜色</span><br><span class="line">  $grey         = #bbb  //页面选中圆点颜色</span><br><span class="line">  $grey-dark    = #999</span><br><span class="line">  $grey-dim     = #666 //侧边栏目录字体颜色</span><br><span class="line">  $black-light  = #555 //修改文章字体颜色</span><br><span class="line">  $black-dim    = #333</span><br><span class="line">  $black-deep   = #495a80  //修改主题的颜色，这里我已经改成老蓝色了。</span><br><span class="line">  $red          = #ff2a2a</span><br><span class="line">  $blue-bright  = #87daff</span><br><span class="line">  $blue         = #0684bd</span><br><span class="line">  $blue-deep    = #262a30</span><br><span class="line">  $orange       = #F39D01 //浏览文章时，目录选中的颜色</span><br></pre></td></tr></table></figure>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>在文件<code>themes/next/source/css/_custom/custom.styl</code>添加样式，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">// 文章内链接文本样式</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#0593d3</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#0593d3</span>;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#fc6423</span>;</span><br><span class="line">        <span class="selector-tag">border-bottom</span>: <span class="selector-tag">none</span>;</span><br><span class="line">        <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#fc6423</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 修改选中字符的颜色</span><br><span class="line"><span class="comment">/* webkit, opera, IE9 */</span></span><br><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#00c4b6</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f7f7f7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* firefox */</span></span><br><span class="line"><span class="selector-pseudo">::-moz-selection</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#00c4b6</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f7f7f7</span>;</span><br><span class="line">&#125;</span><br><span class="line">// 修改网站头部颜色</span><br><span class="line"><span class="selector-class">.headband</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#49b1f5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.site-meta</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#49b1f5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.site-subtitle</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">&#125;</span><br><span class="line">// 修改按键（button）样式</span><br><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#49b1f5</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#49b1f5</span>;</span><br><span class="line">&#125;</span><br><span class="line">// 按键（button）点击时样式</span><br><span class="line"><span class="selector-class">.btn</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#49b1f5</span>;</span><br><span class="line"> <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#49b1f5</span>;</span><br><span class="line">&#125;</span><br><span class="line">// 鼠标移动至文章标题时的效果</span><br><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-title-link</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#49b1f5</span>;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scaleX</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="attribute">-moz-transform</span>: <span class="built_in">scaleX</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="attribute">-ms-transform</span>: <span class="built_in">scaleX</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="attribute">-o-transform</span>: <span class="built_in">scaleX</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="attribute">transition-duration</span>: <span class="number">0.2s</span>;</span><br><span class="line">    <span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    <span class="attribute">transition-delay</span>: <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h1><p>打开 <strong>主题配置文件</strong> 找到<code>Sidebar Avatar</code>字段</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/header.jpg</span></span><br></pre></td></tr></table></figure>
+<h1 id="部分资源地址"><a href="#部分资源地址" class="headerlink" title="部分资源地址"></a>部分资源地址</h1><ol>
+<li><a href="https://www.easyicon.net/" target="_blank" rel="noopener">站点图标</a></li>
+<li><a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">GitHub外链样式地址1</a></li>
+<li><a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">GitHub外链样式地址2</a></li>
+<li><a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">blog效果设置链接</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo系列/" rel="tag"># hexo系列</a>
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo02-github-Typora.html" rel="next" title="hexo系列(二)自建博客之hexo+github+Typora">
+                <i class="fa fa-chevron-left"></i> hexo系列(二)自建博客之hexo+github+Typora
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/vue01Information.html" rel="prev" title="Vue系列(一)简介">
+                Vue系列(一)简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/head.png" alt="scott">
+            
+              <p class="site-author-name" itemprop="name">scott</p>
+              <p class="site-description motion-element" itemprop="description">一个程序员中的小学生</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#博文置顶"><span class="nav-number">1.</span> <span class="nav-text">博文置顶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改hexo-generator-index插件"><span class="nav-number">1.1.</span> <span class="nav-text">修改hexo-generator-index插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置文章置顶"><span class="nav-number">1.2.</span> <span class="nav-text">设置文章置顶</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主题色彩"><span class="nav-number">2.</span> <span class="nav-text">修改主题色彩</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一"><span class="nav-number">2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">2.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#头像设置"><span class="nav-number">3.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部分资源地址"><span class="nav-number">4.</span> <span class="nav-text">部分资源地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">scott</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
