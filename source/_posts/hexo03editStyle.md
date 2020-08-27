@@ -1,0 +1,186 @@
+---
+title: hexo系列(三)自建博客之样式修改
+date: 2019-04-05 14:55:12
+categories: hexo笔记
+tags: 
+- hexo系列
+- blog
+---
+
+本文主要讲解hexo博客的部分样式调整方式
+
+# 博文置顶
+
+## 修改`hexo-generator-index`插件
+
+替换文件：`node_modules/hexo-generator-index/lib/generator.js`为：[generator.js](<https://github.com/ehlxr/java-utils/blob/master/resources/generator.js>)
+
+```js
+'use strict';
+var pagination = require('hexo-pagination');
+module.exports = function(locals){
+  var config = this.config;
+  var posts = locals.posts;
+    posts.data = posts.data.sort(function(a, b) {
+        if(a.top && b.top) { // 两篇文章top都有定义
+            if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+            else return b.top - a.top; // 否则按照top值降序排
+        }
+        else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+            return -1;
+        }
+        else if(!a.top && b.top) {
+            return 1;
+        }
+        else return b.date - a.date; // 都没定义按照文章日期降序排
+    });
+  var paginationDir = config.pagination_dir || 'page';
+  return pagination('', posts, {
+    perPage: config.index_generator.per_page,
+    layout: ['index', 'archive'],
+    format: paginationDir + '/%d/',
+    data: {
+      __index: true
+    }
+  });
+};
+```
+
+## 设置文章置顶
+
+在文章`Front-matter`中添加`top`值，数值越大文章越靠前，如：
+
+```code
+---
+title: 标题
+date: 2019-04-05 12:00:00
+type: "test"
+top: 10
+---
+```
+
+# 修改主题色彩
+
+## 方法一
+
+修改`hexo/themes/next/source/css/_variables/base.styl`中Colors的代码块，网上找的一个配色：
+
+```properties
+// Colors
+// colors for use across theme.
+// --------------------------------------------------
+  $whitesmoke   = #f5f5f5
+  $gainsboro    = #eee  //这个是边栏头像外框的颜色，
+  $gray-lighter = #ddd  //文章中插入图片边框颜色
+  $grey-light   = #ccc  //文章之间分割线、下划线颜色
+  $grey         = #bbb  //页面选中圆点颜色
+  $grey-dark    = #999
+  $grey-dim     = #666 //侧边栏目录字体颜色
+  $black-light  = #555 //修改文章字体颜色
+  $black-dim    = #333
+  $black-deep   = #495a80  //修改主题的颜色，这里我已经改成老蓝色了。
+  $red          = #ff2a2a
+  $blue-bright  = #87daff
+  $blue         = #0684bd
+  $blue-deep    = #262a30
+  $orange       = #F39D01 //浏览文章时，目录选中的颜色
+```
+
+## 方法二
+
+在文件`themes/next/source/css/_custom/custom.styl`添加样式，例如：
+
+```css
+ // Custom styles.
+ // 文章内链接文本样式
+ .post-body p a{
+     color: #0593d3;
+     border-bottom: none;
+     border-bottom: 1px solid #0593d3;
+     &:hover {
+         color: #fc6423;
+         border-bottom: none;
+         border-bottom: 1px solid #fc6423;
+     }
+ }
+ // 修改选中字符的颜色
+ /* webkit, opera, IE9 */
+ ::selection {
+     background: #00c4b6;
+     color: #f7f7f7;
+ }
+ /* firefox */
+ ::-moz-selection {
+     background: #00c4b6;
+     color: #f7f7f7;
+ }
+ // 修改网站头部颜色
+ .headband {
+     height: 3px;
+     background: #49b1f5;
+ }
+ .site-meta {
+     padding: 20px 0;
+     color: #fff;
+     background: #49b1f5;
+ }
+ .site-subtitle {
+     margin-top: 10px;
+     font-size: 13px;
+     color: #ffffff;
+ }
+ // 修改按键（button）样式
+ .btn {
+     color: #49b1f5;
+     background: #fff;
+     border: 2px solid #49b1f5;
+ }
+ // 按键（button）点击时样式
+ .btn:hover {
+   border-color: #49b1f5;
+  color: #fff;
+   background: #49b1f5;
+ }
+ // 鼠标移动至文章标题时的效果
+ .posts-expand .post-title-link::before {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: #49b1f5;
+     visibility: hidden;
+     -webkit-transform: scaleX(0);
+     -moz-transform: scaleX(0);
+     -ms-transform: scaleX(0);
+     -o-transform: scaleX(0);
+     transform: scaleX(0);
+     transition-duration: 0.2s;
+     transition-timing-function: ease-in-out;
+     transition-delay: 0s;
+ }
+```
+
+
+
+# 头像设置
+
+打开 **主题配置文件** 找到`Sidebar Avatar`字段
+
+```yml
+# Sidebar Avatar
+avatar: /images/header.jpg
+```
+
+
+
+# 部分资源地址
+
+1. [站点图标](<https://www.easyicon.net/>)
+2. [GitHub外链样式地址1](<http://tholman.com/github-corners/>)
+3. [GitHub外链样式地址2](<https://github.blog/2008-12-19-github-ribbons/>)
+4. [blog效果设置链接](<https://www.jianshu.com/p/f054333ac9e6>)
+
+
+
