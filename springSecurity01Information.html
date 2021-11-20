@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="xjcooo&#39;s blog">
 <meta property="og:description" content="SpringSecurity简介核心功能 认证 验证某一用户是否是系统内的合法主体, 也就是用户能否访问该系统, 一般是通过验证用户账号及密码的方式来完成认证过程  授权  攻击防护（防止伪造身份）   简介原理1对Web资源进行保护，最好的办法莫过于Filter，要想对方法调用进行保护，最好的办法莫过于AOP。所以springSecurity在我们进行用户认证以及授予权限的时候，通过各种各样的拦">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-26T18:53:42.974Z">
+<meta property="og:updated_time" content="2021-11-20T16:32:44.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring-security系列(一)简介">
 <meta name="twitter:description" content="SpringSecurity简介核心功能 认证 验证某一用户是否是系统内的合法主体, 也就是用户能否访问该系统, 一般是通过验证用户账号及密码的方式来完成认证过程  授权  攻击防护（防止伪造身份）   简介原理1对Web资源进行保护，最好的办法莫过于Filter，要想对方法调用进行保护，最好的办法莫过于AOP。所以springSecurity在我们进行用户认证以及授予权限的时候，通过各种各样的拦">
@@ -371,10 +371,10 @@
 <p>​    自定义一个<code>springSecurity</code>安全配置类, 继承<code>WebSecurityConfigurerAdapter</code>,重写<code>configure(HttpSecurity http)</code>方法来重定义<code>HttpSecurity</code>; 重写<code>configure(WebSecurity web)</code>方法来配置<code>WebSecurity</code>; 重写<code>configure(AuthenticationManagerBuilder auth)</code>方法来自定义<code>AuthenticationManagerBuilder</code>, 进行认证相关的配置, 等等</p>
 <p>​    <strong><code>HttpSecurity</code>配置有如下几类:</strong></p>
 <pre><code>1. authorizeRequests()配置路径拦截,以及权限和角色认证信息
- 2. formLogin()是表单相关的配置
- 3. httpBasic()用来配置basic登录
- 4. logout()用于配置注销的相关配置
- 5. 等等, 待续
+2. formLogin()是表单相关的配置
+3. httpBasic()用来配置basic登录
+4. logout()用于配置注销的相关配置
+5. 等等, 待续
 </code></pre><p>各类配置间使用<code>and()</code>连接,并且返回<code>HttpSecurity</code>本身, 因此可以连续进行配置.</p>
 <p><strong><code>AuthenticationManagerBuilder</code>配置方式:</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        auth.inMemoryAuthentication()</span><br><span class="line">            .passwordEncoder(<span class="keyword">new</span> BCryptPasswordEncoder())</span><br><span class="line">            .withUser(<span class="string">"admin"</span>)</span><br><span class="line">            .password(<span class="keyword">new</span> BCryptPasswordEncoder().encode(<span class="string">"admin"</span>))</span><br><span class="line">            .roles(<span class="string">"ADMIN"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -514,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +589,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
